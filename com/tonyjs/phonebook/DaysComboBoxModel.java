@@ -6,7 +6,6 @@ import javax.swing.ComboBoxModel;
 @SuppressWarnings({ "serial", "rawtypes" })
 public class DaysComboBoxModel extends AbstractListModel implements ComboBoxModel
 {
-
 	Integer[] days;
 	int selection = 1;
 
@@ -16,22 +15,26 @@ public class DaysComboBoxModel extends AbstractListModel implements ComboBoxMode
 	}
 	
 	@Override
-	public int getSize() {
+	public int getSize()
+	{
 		return days.length;
 	}
 
 	@Override
-	public Object getElementAt(int index) {
+	public Object getElementAt(int index)
+	{
 		return days[index];
 	}
 
 	@Override
-	public void setSelectedItem(Object anItem) {
+	public void setSelectedItem(Object anItem)
+	{
 		selection = (Integer) anItem;
 	}
 
 	@Override
-	public Object getSelectedItem() {
+	public Object getSelectedItem()
+	{
 		return selection;
 	}
 

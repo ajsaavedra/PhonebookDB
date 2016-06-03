@@ -374,7 +374,7 @@ public class Phonebook extends JFrame
 			if (toFind.getFriendCount() != 0) {
 				message = "Friends matching <b>" + nameToFind + "</b> found in your list:<br>";
 				Friend pointer = toFind.getFirstFriend();
-				while (pointer != null) {
+				while (pointer != toFind.getTailNode()) {
 					message += pointer.getFullName() + "<br>";
 					pointer = pointer.getNext();
 				}

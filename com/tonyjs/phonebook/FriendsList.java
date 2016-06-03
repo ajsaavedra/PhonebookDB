@@ -52,6 +52,11 @@ public class FriendsList
 	{
 		return head.getNext();
 	}
+	
+	public Friend getTailNode()
+	{
+		return tail;
+	}
 
 
 	public boolean addFriend(Friend newFriend)
@@ -110,12 +115,11 @@ public class FriendsList
 	{
 		Friend pointer = head.getNext();
 		FriendsList toReturn = new FriendsList();
-
 		while (pointer != tail) {
 			if (pointer.getFullName().equals(friend) ||
 					pointer.getFirstName().equals(friend) ||
 					pointer.getLastName().equals(friend)) {
-				toReturn.addFriend(pointer);
+				toReturn.addFriend(replicateFriend(pointer));
 			}
 			pointer = pointer.getNext();
 		}
